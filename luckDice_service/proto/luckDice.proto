@@ -1,0 +1,21 @@
+
+syntax = "proto3";
+package luckDice_service;
+
+option go_package = ".";
+
+
+
+message RequestMsg {
+	string orderID = 1;
+    string customerID = 2;
+}
+
+message ResponseMsg {
+    bool lucky = 1;
+}
+
+
+service luckDiceService {
+    rpc IndemPay(RequestMsg) returns (ResponseMsg);
+}
